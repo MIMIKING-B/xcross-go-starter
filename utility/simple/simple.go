@@ -15,22 +15,6 @@ func RouterPrefix(ctx context.Context, app string) string {
 	return g.Cfg().MustGet(ctx, "router."+app+".prefix", "/"+app+"").String()
 }
 
-// FilterMaskDemo 过滤演示环境下的配置隐藏字段
-func FilterMaskDemo(ctx context.Context, src g.Map) g.Map {
-	if src == nil {
-		return nil
-	}
-	if !IsDemo(ctx) {
-		return src
-	}
-	for k := range src {
-		if _, ok := consts.ConfigMaskDemoField[k]; ok {
-			src[k] = consts.DemoTips
-		}
-	}
-	return src
-}
-
 // DefaultErrorTplContent 获取默认的错误模板内容
 func DefaultErrorTplContent(ctx context.Context) string {
 	return gfile.GetContents(g.Cfg().MustGet(ctx, "viewer.paths").String() + "/error/default.html")

@@ -2,35 +2,11 @@ package charset
 
 import (
 	"bytes"
-	"crypto/rand"
-	r "math/rand"
-	"strings"
-	"time"
 
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/text/gstr"
 	"github.com/gogf/gf/v2/util/gutil"
 )
-
-// RandomCreateBytes 生成随机字串符
-func RandomCreateBytes(n int, alphabets ...byte) []byte {
-	if len(alphabets) == 0 {
-		alphabets = []byte(`0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz`)
-	}
-	var bytes = make([]byte, n)
-	var randBy bool
-	if num, err := rand.Read(bytes); num != n || err != nil {
-		randBy = true
-	}
-	for i, b := range bytes {
-		if randBy {
-			bytes[i] = alphabets[r.New(r.NewSource(time.Now().UnixNano())).Intn(len(alphabets))]
-		} else {
-			bytes[i] = alphabets[b%byte(len(alphabets))]
-		}
-	}
-	return bytes
-}
 
 // ParseErrStack 解析错误的堆栈信息
 func ParseErrStack(err error) []string {
@@ -54,17 +30,4 @@ func SerializeStack(err error) string {
 		ExportedOnly: false,
 	})
 	return buffer.String()
-}
-
-// SubstrAfter 截取指定字符后的内容
-func SubstrAfter(str string, symbol string) string {
-	comma := strings.Index(str, symbol)
-	if comma < 0 { // -1 不存在
-		return ""
-	}
-	pos := strings.Index(str[comma:], symbol)
-	if comma+pos+1 > len(str) {
-		return ""
-	}
-	return str[comma+pos+1:]
 }
