@@ -27,6 +27,8 @@ func Init(ctx context.Context) {
 		return
 	}
 	fmt.Printf("当前运行环境：%v, 运行根路径为：%v \r\n初始化版本：v%v, gf版本：%v \n", runtime.GOOS, gfile.Pwd(), consts.VersionApp, gf.VERSION)
+	// 初始化链路追踪
+	InitTrace(ctx)
 	// 设置缓存适配器
 	cache.SetAdapter(ctx)
 }

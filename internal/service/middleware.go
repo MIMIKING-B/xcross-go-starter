@@ -19,6 +19,12 @@ type (
 		DemoLimit(r *ghttp.Request)
 		// Ctx 初始化请求上下文
 		Ctx(r *ghttp.Request)
+		// PreFilter 请求输入预处理
+		// api使用gf规范路由并且XxxReq结构体实现了validate.Filter接口即可
+		PreFilter(r *ghttp.Request)
+		// ResponseHandler 全局HTTP响应预处理中间件
+		// 统一处理接口响应格式、错误码、异常页面、响应类型分发
+		ResponseHandler(r *ghttp.Request)
 	}
 )
 
