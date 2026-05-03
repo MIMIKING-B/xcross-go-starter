@@ -12,14 +12,10 @@ import (
 
 type (
 	IView interface {
-		// GetBreadCrumb 前台系统-获取面包屑列表
-		GetBreadCrumb(ctx context.Context, in *model.ViewGetBreadCrumbInput) []model.ViewBreadCrumb
-		// GetTitle 前台系统-获取标题
-		GetTitle(ctx context.Context, in *model.ViewGetTitleInput) string
-		// RenderTpl 渲染指定模板页面
-		RenderTpl(ctx context.Context, tpl string, data ...model.View)
 		// Render 渲染默认模板页面
 		Render(ctx context.Context, data ...model.View)
+		// RenderTpl 渲染指定模板页面
+		RenderTpl(ctx context.Context, tpl string, data ...model.View)
 		// Error 自定义错误页面
 		Error(ctx context.Context, err error)
 	}

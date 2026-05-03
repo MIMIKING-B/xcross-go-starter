@@ -22,17 +22,9 @@ func New() *sView {
 	return &sView{}
 }
 
-// GetBreadCrumb 前台系统-获取面包屑列表
-func (s *sView) GetBreadCrumb(ctx context.Context, in *model.ViewGetBreadCrumbInput) []model.ViewBreadCrumb {
-	breadcrumb := []model.ViewBreadCrumb{
-		{Name: "首页", Url: "/"},
-	}
-	return breadcrumb
-}
-
-// GetTitle 前台系统-获取标题
-func (s *sView) GetTitle(ctx context.Context, in *model.ViewGetTitleInput) string {
-	return "title"
+// Render 渲染默认模板页面
+func (s *sView) Render(ctx context.Context, data ...model.View) {
+	s.RenderTpl(ctx, g.Cfg().MustGet(ctx, "viewer.homeLayout").String(), data...)
 }
 
 // RenderTpl 渲染指定模板页面
@@ -58,11 +50,9 @@ func (s *sView) RenderTpl(ctx context.Context, tpl string, data ...model.View) {
 	if viewObj.IpcCode == "" {
 		viewObj.IpcCode = g.Cfg().MustGet(ctx, `setting.icpCode`).String()
 	}
-
 	if viewObj.GET == nil {
 		viewObj.GET = request.GetQueryMap()
 	}
-
 	// 去掉空数据
 	viewData := gconv.Map(viewObj)
 	for k, v := range viewData {
@@ -70,15 +60,8 @@ func (s *sView) RenderTpl(ctx context.Context, tpl string, data ...model.View) {
 			delete(viewData, k)
 		}
 	}
-	// 内置对象
-	viewData["BuildIn"] = &viewBuildIn{httpRequest: request}
 	// 渲染模板
 	_ = request.Response.WriteTpl(tpl, viewData)
-}
-
-// Render 渲染默认模板页面
-func (s *sView) Render(ctx context.Context, data ...model.View) {
-	s.RenderTpl(ctx, g.Cfg().MustGet(ctx, "viewer.homeLayout").String(), data...)
 }
 
 // Error 自定义错误页面

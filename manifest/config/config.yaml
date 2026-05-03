@@ -13,6 +13,13 @@ system:
     switch: true                                      # 国际化开关，可选：false|true，默认为true
     defaultLanguage: "zh-CN"                          # 默认使用语言，可选：zh-CN|zh-TW|en，默认为zh-CN
 
+# 内容设置
+setting:
+  title: "xcross-go-starter"
+  keywords: "xcross-go-starter"
+  description: "work it!"
+  icpCode: "work it!"
+
 # 统一默认日志配置
 defaultLogger: &defaultLogger
   level: "all"
@@ -23,6 +30,11 @@ defaultLogger: &defaultLogger
   rotateExpire: "7d"                      # 日志保留天数
   rotateBackupLimit: 2                    # 最大备份数量
   rotateBackupCompress: 2                 # 日志文件压缩级别，0-9,9最高
+
+# 链路追踪
+jaeger:
+  switch: false                                   # 链路追踪开关，可选：true|false，默认为false
+  endpoint: "127.0.0.1:6831"                      # jaeger-agent上报地址
 
 # gf配置，配置参考：https://goframe.org/pages/viewpage.action?pageId=44449486
 server:
@@ -85,7 +97,3 @@ database:
     debug: true
     Prefix: "hg_"
 
-# 链路追踪
-jaeger:
-  switch: false                                   # 链路追踪开关，可选：true|false，默认为false
-  endpoint: "127.0.0.1:6831"                      # jaeger-agent上报地址
