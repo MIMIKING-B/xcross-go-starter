@@ -35,9 +35,7 @@ func SetGFMode(ctx context.Context) {
 	if len(mode) == 0 {
 		mode = gmode.NOT_SET
 	}
-
 	var modes = []string{gmode.DEVELOP, gmode.TESTING, gmode.STAGING, gmode.PRODUCT}
-
 	// 如果是有效的运行模式，就进行设置
 	if validate.InSlice(modes, mode) {
 		gmode.Set(mode)
