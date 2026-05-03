@@ -7,7 +7,6 @@ import (
 // 错误解释
 const (
 	ErrorORM         = "sql执行异常"
-	ErrorNotData     = "数据不存在"
 	ErrorRotaPointer = "指针转换异常"
 )
 
@@ -19,7 +18,6 @@ func ErrorMessage(err error) (message string) {
 	if err == nil {
 		return "操作失败！~"
 	}
-
 	message = err.Error()
 	for _, e := range concealErrorSlice {
 		if gstr.Contains(message, e) {
