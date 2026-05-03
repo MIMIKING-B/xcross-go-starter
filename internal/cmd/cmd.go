@@ -61,7 +61,7 @@ var (
 )
 
 func init() {
-	if err := Main.AddCommand(All, Http, Help); err != nil {
+	if err := Main.AddCommand(All, Http, Tools, Help); err != nil {
 		panic(err)
 	}
 }
