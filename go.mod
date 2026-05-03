@@ -2,7 +2,12 @@ module xcross-go-starter
 
 go 1.23.0
 
-require github.com/gogf/gf/v2 v2.10.0
+require (
+	github.com/go-think/openssl v1.20.0
+	github.com/gogf/gf/contrib/trace/jaeger/v2 v2.7.4
+	github.com/gogf/gf/v2 v2.10.0
+	go.opentelemetry.io/otel v1.38.0
+)
 
 require (
 	github.com/BurntSushi/toml v1.5.0 // indirect
@@ -24,7 +29,7 @@ require (
 	github.com/olekukonko/tablewriter v1.1.0 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
-	go.opentelemetry.io/otel v1.38.0 // indirect
+	go.opentelemetry.io/otel/exporters/jaeger v1.14.0 // indirect
 	go.opentelemetry.io/otel/metric v1.38.0 // indirect
 	go.opentelemetry.io/otel/sdk v1.38.0 // indirect
 	go.opentelemetry.io/otel/trace v1.38.0 // indirect
