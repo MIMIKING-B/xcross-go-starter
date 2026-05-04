@@ -6,6 +6,7 @@ import (
 	"runtime"
 	"xcross-go-starter/internal/consts"
 	"xcross-go-starter/internal/library/cache"
+	"xcross-go-starter/internal/service"
 	"xcross-go-starter/utility/simple"
 	"xcross-go-starter/utility/validate"
 
@@ -31,6 +32,8 @@ func Init(ctx context.Context) {
 	InitTrace(ctx)
 	// 设置缓存适配器
 	cache.SetAdapter(ctx)
+	// 初始化功能库配置
+	service.SysConfig().InitConfig(ctx)
 }
 
 // InitTrace 初始化链路追踪

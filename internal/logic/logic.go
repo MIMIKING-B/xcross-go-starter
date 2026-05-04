@@ -6,5 +6,6 @@ package logic
 
 import (
 	_ "xcross-go-starter/internal/logic/middleware"
+	_ "xcross-go-starter/internal/logic/sys"
 	_ "xcross-go-starter/internal/logic/view"
 )
