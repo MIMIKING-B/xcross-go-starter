@@ -20,6 +20,16 @@ setting:
   description: "work it!"
   icpCode: "work it!"
 
+# 路由配置
+router:
+  # 接口
+  api:
+    # 前缀
+    prefix: "/api"
+  home:
+    # 前缀
+    prefix: "/home"
+
 # 统一默认日志配置
 defaultLogger: &defaultLogger
   level: "all"
