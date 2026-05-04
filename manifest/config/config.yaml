@@ -17,8 +17,8 @@ system:
 setting:
   title: "xcross-go-starter"
   keywords: "xcross-go-starter"
-  description: "work it!"
-  icpCode: "work it!"
+  description: "it work!"
+  icpCode: "it work!"
 
 # 路由配置
 router:
