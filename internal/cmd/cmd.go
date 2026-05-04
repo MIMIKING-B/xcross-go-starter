@@ -2,7 +2,8 @@ package cmd
 
 import (
 	"context"
-	"xcross-go-starter/utility/simple"
+
+	"github.com/MIMIKING-B/xcross-go-starter/utility/simple"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/os/gcmd"

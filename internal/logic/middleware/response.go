@@ -1,10 +1,10 @@
 package middleware
 
 import (
-	"xcross-go-starter/internal/consts"
-	"xcross-go-starter/internal/library/response"
-	"xcross-go-starter/utility/charset"
-	"xcross-go-starter/utility/simple"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/consts"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/library/response"
+	"github.com/MIMIKING-B/xcross-go-starter/utility/charset"
+	"github.com/MIMIKING-B/xcross-go-starter/utility/simple"
 
 	"github.com/gogf/gf/v2/errors/gcode"
 	"github.com/gogf/gf/v2/errors/gerror"

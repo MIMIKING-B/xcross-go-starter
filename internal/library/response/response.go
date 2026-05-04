@@ -1,8 +1,8 @@
 package response
 
 import (
-	"xcross-go-starter/internal/library/contexts"
-	"xcross-go-starter/internal/model"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/library/contexts"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/model"
 
 	"github.com/gogf/gf/v2/errors/gcode"
 	"github.com/gogf/gf/v2/net/ghttp"

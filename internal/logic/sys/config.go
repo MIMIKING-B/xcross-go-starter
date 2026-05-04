@@ -2,7 +2,7 @@ package sys
 
 import (
 	"context"
-	"xcross-go-starter/internal/service"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/service"
 
 	"github.com/gogf/gf/v2/frame/g"
 )

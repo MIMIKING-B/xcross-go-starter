@@ -2,10 +2,10 @@ package validate_test
 
 import (
 	"context"
+	"github.com/MIMIKING-B/xcross-go-starter/utility/validate"
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/test/gtest"
 	"testing"
-	"xcross-go-starter/utility/validate"
 )
 
 // MockFilter 是 Filter 接口的模拟实现。

@@ -7,7 +7,7 @@ package service
 
 import (
 	"context"
-	"xcross-go-starter/internal/model"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/model"
 )
 
 type (

@@ -2,7 +2,7 @@ package simple
 
 import (
 	"context"
-	"xcross-go-starter/internal/consts"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/consts"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"

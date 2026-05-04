@@ -1,4 +1,4 @@
-module xcross-go-starter
+module github.com/MIMIKING-B/xcross-go-starter
 
 go 1.23.0
 

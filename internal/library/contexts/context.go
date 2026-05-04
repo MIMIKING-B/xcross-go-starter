@@ -2,8 +2,8 @@ package contexts
 
 import (
 	"context"
-	"xcross-go-starter/internal/consts"
-	"xcross-go-starter/internal/model"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/consts"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/model"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"

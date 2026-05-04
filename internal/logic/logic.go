@@ -5,7 +5,7 @@
 package logic
 
 import (
-	_ "xcross-go-starter/internal/logic/middleware"
-	_ "xcross-go-starter/internal/logic/sys"
-	_ "xcross-go-starter/internal/logic/view"
+	_ "github.com/MIMIKING-B/xcross-go-starter/internal/logic/middleware"
+	_ "github.com/MIMIKING-B/xcross-go-starter/internal/logic/sys"
+	_ "github.com/MIMIKING-B/xcross-go-starter/internal/logic/view"
 )

@@ -1,8 +1,8 @@
 package validate_test
 
 import (
+	"github.com/MIMIKING-B/xcross-go-starter/utility/validate"
 	"testing"
-	"xcross-go-starter/utility/validate"
 
 	"github.com/gogf/gf/v2/test/gtest"
 )

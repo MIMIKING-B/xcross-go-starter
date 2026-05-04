@@ -4,8 +4,9 @@ import (
 	"context"
 	"os"
 	"sync"
-	"xcross-go-starter/internal/consts"
-	"xcross-go-starter/utility/simple"
+
+	"github.com/MIMIKING-B/xcross-go-starter/internal/consts"
+	"github.com/MIMIKING-B/xcross-go-starter/utility/simple"
 
 	"github.com/gogf/gf/v2/os/gctx"
 	"github.com/gogf/gf/v2/os/gproc"

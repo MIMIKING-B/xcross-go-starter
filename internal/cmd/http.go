@@ -2,8 +2,9 @@ package cmd
 
 import (
 	"context"
-	"xcross-go-starter/internal/router"
-	"xcross-go-starter/internal/service"
+
+	"github.com/MIMIKING-B/xcross-go-starter/internal/router"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/service"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"

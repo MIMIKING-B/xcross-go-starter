@@ -3,12 +3,12 @@ package global
 import (
 	"context"
 	"fmt"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/consts"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/library/cache"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/service"
+	"github.com/MIMIKING-B/xcross-go-starter/utility/simple"
+	"github.com/MIMIKING-B/xcross-go-starter/utility/validate"
 	"runtime"
-	"xcross-go-starter/internal/consts"
-	"xcross-go-starter/internal/library/cache"
-	"xcross-go-starter/internal/service"
-	"xcross-go-starter/utility/simple"
-	"xcross-go-starter/utility/validate"
 
 	"github.com/gogf/gf/contrib/trace/jaeger/v2"
 	"github.com/gogf/gf/v2"

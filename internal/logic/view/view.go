@@ -2,10 +2,10 @@ package view
 
 import (
 	"context"
-	"xcross-go-starter/internal/model"
-	"xcross-go-starter/internal/service"
-	"xcross-go-starter/utility/charset"
-	"xcross-go-starter/utility/simple"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/model"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/service"
+	"github.com/MIMIKING-B/xcross-go-starter/utility/charset"
+	"github.com/MIMIKING-B/xcross-go-starter/utility/simple"
 
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"

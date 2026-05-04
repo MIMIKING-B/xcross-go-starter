@@ -2,8 +2,8 @@ package router
 
 import (
 	"context"
-	"xcross-go-starter/internal/consts"
-	"xcross-go-starter/utility/simple"
+	"github.com/MIMIKING-B/xcross-go-starter/internal/consts"
+	"github.com/MIMIKING-B/xcross-go-starter/utility/simple"
 
 	"github.com/gogf/gf/v2/net/ghttp"
 )
