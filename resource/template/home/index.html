@@ -1,29 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="keywords" content="@{.Keywords}"/>
     <meta name="description" content="@{.Description}"/>
     <title>@{.Title}</title>
     <script type="text/javascript" src="/resource/home/js/jquery-3.6.0.min.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         html, body {
             width: 100%;
             height: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: #f6f6f6;
+            background-color: #f8f9fa;
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #222;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .version {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-<div style="padding-top: 100px;text-align:center;">
-    <h1><p>Hello，@{.Data.name}!!</p></h1>
-    <h2><p>当前版本：@{.Data.version}</p></h2>
+<div class="container">
+    <div class="title">@{.Data.name} 运行正常</div>
+    <div class="version">当前版本：@{.Data.version}</div>
 </div>
 </body>
-<script>
-</script>
 </html>
