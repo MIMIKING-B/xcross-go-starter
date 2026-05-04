@@ -2,6 +2,7 @@ package sys
 
 import (
 	"context"
+
 	"github.com/MIMIKING-B/xcross-go-starter/internal/service"
 
 	"github.com/gogf/gf/v2/frame/g"
@@ -26,7 +27,7 @@ func (s *sSysConfig) InitConfig(ctx context.Context) {
 
 // LoadConfig 加载系统配置
 func (s *sSysConfig) LoadConfig(ctx context.Context) (err error) {
-	// Example
+	// TODO Example
 	// tk, err := s.GetLoadToken(ctx)
 	// if err != nil {
 	//	return
