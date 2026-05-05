@@ -33,7 +33,7 @@ router:
 # 统一默认日志配置 https://pkg.go.dev/github.com/gogf/gf/v2/os/glog#Config
 defaultLogger: &defaultLogger
   level: "all"
-  flags: 42                         # 日志格式控制：42=时间+级别+完整文件路径+行号；34=时间+级别(无路径)
+  flags: 42                         # 日志格式控制：42=时间+级别+完整文件路径+行号；40=时间+级别(无路径)
   timeFormat: "2006-01-02 15:04:05" # 自定义日志输出的时间格式，使用Golang标准的时间格式配置
   file: "{Y-m-d}.log"                     # 日志文件格式。默认为"{Y-m-d}.log"
   stdoutColorDisabled: false              # 关闭终端的颜色打印。可选：false|true，默认false
