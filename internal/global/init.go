@@ -3,12 +3,14 @@ package global
 import (
 	"context"
 	"fmt"
+	"runtime"
+	"time"
+
 	"github.com/MIMIKING-B/xcross-go-starter/internal/consts"
 	"github.com/MIMIKING-B/xcross-go-starter/internal/library/cache"
 	"github.com/MIMIKING-B/xcross-go-starter/internal/service"
 	"github.com/MIMIKING-B/xcross-go-starter/utility/simple"
 	"github.com/MIMIKING-B/xcross-go-starter/utility/validate"
-	"runtime"
 
 	"github.com/gogf/gf/contrib/trace/jaeger/v2"
 	"github.com/gogf/gf/v2"
@@ -23,7 +25,20 @@ func Init(ctx context.Context) {
 	// 设置gf运行模式
 	SetGFMode(ctx)
 	// 默认上海时区
-	if err := gtime.SetTimeZone("Asia/Shanghai"); err != nil {
+	var err error
+	if runtime.GOOS == "windows" {
+		// Windows 用固定时区（UTC+8）
+		cst := time.FixedZone("CST", 8*3600)
+		err := gtime.SetTimeZone(cst.String())
+		if err != nil {
+			return
+		}
+		time.Local = cst
+	} else {
+		// Linux/macOS 用标准时区
+		err = gtime.SetTimeZone("Asia/Shanghai")
+	}
+	if err != nil {
 		g.Log().Fatalf(ctx, "时区设置异常 err：%+v", err)
 		return
 	}
