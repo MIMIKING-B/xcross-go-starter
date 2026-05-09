@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"runtime"
-	"time"
 
 	"github.com/MIMIKING-B/xcross-go-starter/internal/consts"
 	"github.com/MIMIKING-B/xcross-go-starter/internal/library/cache"
@@ -25,22 +24,11 @@ func Init(ctx context.Context) {
 	// 设置gf运行模式
 	SetGFMode(ctx)
 	// 默认上海时区
-	var err error
-	if runtime.GOOS == "windows" {
-		// Windows 用固定时区（UTC+8）
-		cst := time.FixedZone("CST", 8*3600)
-		err := gtime.SetTimeZone(cst.String())
-		if err != nil {
-			return
-		}
-		time.Local = cst
-	} else {
+	if runtime.GOOS != "windows" {
 		// Linux/macOS 用标准时区
-		err = gtime.SetTimeZone("Asia/Shanghai")
-	}
-	if err != nil {
-		g.Log().Fatalf(ctx, "时区设置异常 err：%+v", err)
-		return
+		if err := gtime.SetTimeZone("Asia/Shanghai"); err != nil {
+			g.Log().Warningf(ctx, "时区设置失败: %v, 使用默认时区", err)
+		}
 	}
 	fmt.Printf("当前运行环境：%v, 运行根路径为：%v \r\n初始化版本：v%v, gf版本：%v \n", runtime.GOOS, gfile.Pwd(), consts.VersionApp, gf.VERSION)
 	// 初始化链路追踪
